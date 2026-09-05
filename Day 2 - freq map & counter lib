@@ -1,0 +1,24 @@
+#run in python
+foods=["panner","eggs","yogurt","chana","soya","eggs","soya","eggs","chana","panner","yogurt","soya","yogurt","curd","eggs","milk"] # i just wrote all high protein foods i ate this week 
+food_count={}
+for i in foods:
+	food_count[i]=food_count.get(i,0)+1
+print(food_count)  #it simply counts how frequently food i am eating like how much i ate panner which is 2times this week 
+#
+#
+# now i will be calculating which is highest or what i ate mostly this week
+max_food=None
+max_count=0
+for food,count in food_count.items(): # it just names key as food and values as count of dict in for loop
+	if count>max_count: # this was hardest to understand but its just going one by one and will automaticalky stop after it finds max 
+		max_count=count
+		max_food=food
+print(f"I ate {max_food} {max_count} times this week") #final printing max eaten food of this week
+#
+#
+# theres more i leanred and it is lil diff like alien code for me XD
+from collections import Counter
+food_counter=Counter(foods) # it lietrally gives directly a dictionary like frequency map i havent learned it deeply so i cant tell which method is best to make fmaps
+print(food_counter)
+print(food_counter.most_common(1))# and it also gives the max one in single code saving very much space complexity i will def study this deeply 
+#thats it for today i hope you liked it <3
